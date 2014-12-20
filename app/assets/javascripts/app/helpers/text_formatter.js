@@ -1,3 +1,4 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
 
 // cache url regex globally, for direct acces when testing
 $(function() {
@@ -7,7 +8,7 @@ $(function() {
 (function(){
   //make it so I take text and mentions rather than the modelapp.helpers.textFormatter(
   var textFormatter = function textFormatter(text, model) {
-    var mentions = model.get("mentioned_people");
+    var mentions = model ? model.get("mentioned_people") : [];
 
     return textFormatter.mentionify(
       textFormatter.hashtagify(
@@ -141,4 +142,5 @@ $(function() {
 
   app.helpers.textFormatter = textFormatter;
 })();
+// @license-end
 

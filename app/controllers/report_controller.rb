@@ -6,8 +6,10 @@ class ReportController < ApplicationController
   before_filter :authenticate_user!
   before_filter :redirect_unless_admin, :except => [:create]
 
+  use_bootstrap_for :index
+
   def index
-    @reports = Report.where(reviewed: false).all
+    @reports = Report.where(reviewed: false)
   end
 
   def update

@@ -12,6 +12,7 @@ es-AR:
   _home: "Inicio"
   _photos: "fotos"
   _services: "Servicios"
+  _terms: "Términos y condiciones"
   account: "Cuenta"
   activerecord:
     errors:
@@ -87,14 +88,31 @@ es-AR:
         other: "%{count} usuarios"
         zero: "%{count} usuarios"
       week: "Semana"
+    user_entry:
+      account_closed: "Cuenta de usuario cerrada"
+      diaspora_handle: "Dirección diaspora*"
+      email: "Correo electrónico"
+      guid: "GUID"
+      id: "Identificador ID"
+      last_seen: "Visto por última vez"
+      ? "no"
+      : "No"
+      nsfw: "No apto para todo público (#nsfw)"
+      unknown: "Desconocido"
+      ? "yes"
+      : Si
     user_search:
+      account_closing_scheduled: "La cuenta de %{name} está agendada para ser eliminada. Será procesada en unos momentos..."
       add_invites: "Añadir invitaciones"
+      are_you_sure: "¿Estás seguro de que quieres eliminar tu cuenta? ¡Esto no se puede deshacer!"
+      close_account: "Cerrar cuenta"
       email_to: "Mandar invitación por correo electrónico a"
       under_13: "Mostrar usuarios menores de 13 años (COPPA)"
       users:
         one: "%{count} usuario encontrado"
         other: "%{count} usuarios encontrados"
         zero: "%{count} usuarios encontrados"
+      view_profile: "Ver perfil"
       you_currently: "Actualmente te quedan %{user_invitation} invitaciones para enviar %{link}"
     weekly_user_stats:
       amount_of:
@@ -261,6 +279,7 @@ es-AR:
     few: "%{count} contactos"
     index:
       add_a_new_aspect: "Añadir un nuevo aspecto"
+      add_contact: "Agregar contacto"
       add_to_aspect: "añade contactos a %{name}"
       add_to_aspect_link: "Agregar contactos a %{name}"
       all_contacts: "Todos los Contactos"
@@ -271,9 +290,10 @@ es-AR:
       no_contacts_message: "Echa un vistazo a %{community_spotlight}"
       no_contacts_message_with_aspect: "Echa un vistazo a %{community_spotlight} o %{add_to_aspect_link}"
       only_sharing_with_me: "Compartiendo solo conmigo"
-      remove_person_from_aspect: "Quitar a %{person_name} de \"%{aspect_name}\""
+      remove_contact: "Eliminar contacto"
       start_a_conversation: "Empezar una conversación"
       title: "Contactos"
+      user_search: "Búsqueda de usuarios"
       your_contacts: "Tus contactos"
     many: "%{count} contactos"
     one: "1 contacto"
@@ -388,6 +408,14 @@ es-AR:
     getting_started_tutorial: "series de tutoriales 'Primeros pasos'"
     here: "aquí"
     irc: "IRC"
+    keyboard_shortcuts:
+      keyboard_shortcuts_a1: "En la \"Entrada\" puedes utilizar los siguientes atajos de teclado:"
+      keyboard_shortcuts_li1: "j- salta a la publicación que sigue"
+      keyboard_shortcuts_li2: "k- salta a la publicación anterior"
+      keyboard_shortcuts_li3: "c- comentar la publicación actual"
+      keyboard_shortcuts_li4: "l- marcar como \"Me gusta\" la publicación actual"
+      keyboard_shortcuts_q: "¿Qué atajos de teclado están disponibles?"
+      title: "Atajos de teclado"
     markdown: "Markdown"
     mentions:
       how_to_mention_a: "Tipeé el signo \"@\" y comience a escribir el nombre. Un menú desplegable con opciones aparecerá para seleccionarlo más fácilmente. Sólo es posible mencionar a las personas que tienes agregadas en el aspecto."
@@ -520,6 +548,7 @@ es-AR:
       what_are_tags_for_a: "Las etiquetas son una manera de categorizar una publicación, usualmente por un tema. Buscando por etiquetas se mostraran todas las publicaciones con dicha etiqueta que puedes ver (ambos públicos y privados). Esto permite a las personas que están interesadas en un tema en particular encontrar todas las publicaciones públicas sobre él."
       what_are_tags_for_q: "¿Para qué sirven las etiquetas?"
     third_party_tools: "herramientas de terceros"
+    title_header: "Ayuda"
     tutorial: "tutorial"
     tutorials: "tutoriales"
     wiki: "wiki"
@@ -638,6 +667,7 @@ es-AR:
       comment_on_post: "Comentados"
       liked: "Me Gusta"
       mark_all_as_read: "Marcar todo como leído"
+      mark_all_shown_as_read: "Marcar todo como leído"
       mark_read: "Marcar como leído"
       mark_unread: "Marcar como no leído"
       mentioned: "Mencionados"
@@ -935,6 +965,8 @@ es-AR:
       sign_up: "REGISTRARSE"
       sign_up_message: "Redes Sociales con un <3"
       submitting: "Enviar"
+      terms: "Con la creación de una cuenta aceptas los %{terms_link}."
+      terms_link: "Términos de Servicio"
       username: "NOMBRE DE USUARIO"
   report:
     comment_label: "<b>Comentario</b>:<br>%{data}"
@@ -1125,10 +1157,7 @@ es-AR:
       no_message_to_display: "No hay mensajes que mostrar."
     new:
       mentioning: "Mencionar a: %{person}"
-    too_long:
-      one: "Por favor, hacé que tu mensaje de estado tenga menos de %{count} caracter"
-      other: "Por favor, hacé que tu mensaje de estado tenga menos de %{count} caracteres"
-      zero: "Por favor, hacé que tu mensaje de estado tenga menos de %{count} caracteres"
+    too_long: "Por favor haz que tu mensaje de estado tenga menos de %{count} caracteres. En este momento el máximo permitido es de %{current_length} caracteres."
   stream_helper:
     hide_comments: "Ocultar comentarios"
     show_comments:

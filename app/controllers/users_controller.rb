@@ -3,7 +3,12 @@
 #   the COPYRIGHT file.
 
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new, :create, :public, :user_photo]
+  before_action :authenticate_user!, :except => [:new, :create, :public, :user_photo]
+  before_action -> { @css_framework = :bootstrap }, only: [:privacy_settings, :edit]
+
+  layout ->(c) { request.format == :mobile ? "application" : "with_header_with_footer" }, only: [:privacy_settings, :edit]
+
+  use_bootstrap_for :getting_started
 
   respond_to :html
 
@@ -117,8 +122,6 @@ class UsersController < ApplicationController
     @person   = @user.person
     @profile  = @user.profile
 
-    @css_framework = :bootstrap
-    @include_application_css = true #Hack for multiple CSS frameworks and having two main styles
     respond_to do |format|
     format.mobile { render "users/getting_started" }
     format.all { render "users/getting_started", layout: "with_header_with_footer" }
@@ -133,8 +136,11 @@ class UsersController < ApplicationController
   end
 
   def export
-    exporter = Diaspora::Exporter.new(Diaspora::Exporters::XML)
-    send_data exporter.execute(current_user), :filename => "#{current_user.username}_diaspora_data.xml", :type => :xml
+    if export = Diaspora::Exporter.new(current_user).execute
+      send_data export, filename: "#{current_user.username}_diaspora_data.json", type: :json
+    else
+      head :not_acceptable
+    end
   end
 
   def export_photos

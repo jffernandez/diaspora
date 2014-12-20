@@ -10,8 +10,9 @@ da:
   _contacts: "Kontakter"
   _help: "Hjælp"
   _home: "Hjem"
-  _photos: "Billeder"
+  _photos: "billeder"
   _services: "Tjenester"
+  _terms: "betingelser"
   account: "Konto"
   activerecord:
     errors:
@@ -87,14 +88,31 @@ da:
         other: "%{count} brugere"
         zero: "%{count} brugere"
       week: "Uge"
+    user_entry:
+      account_closed: "konto lukket"
+      diaspora_handle: "Diaspora navn"
+      email: "E-mail"
+      guid: "GUID"
+      id: "ID"
+      last_seen: "sidst set"
+      ? "no"
+      : nej
+      nsfw: "#nsfw"
+      unknown: "ukendt"
+      ? "yes"
+      : ja
     user_search:
+      account_closing_scheduled: "Kontoen med navnet: %{name} vil blive lukket om et øjeblik ..."
       add_invites: "Tilføj invitationer"
+      are_you_sure: "Er du sikker på at du vil lukke denne konto?"
+      close_account: "Luk konto"
       email_to: "Inviter på e-mail"
       under_13: "Vis brugere der er under 13 (COPPA)"
       users:
         one: "%{count} bruger fundet"
         other: "%{count} brugere fundet"
         zero: "Ingen brugere fundet"
+      view_profile: "Se profil"
       you_currently:
         one: "Du har en invitation tilbage %{link}"
         other: "Du har %{count} invitationer tilbage %{link}"
@@ -180,13 +198,13 @@ da:
         mail_podmin: "Podmin e-mail"
         need_help: "Brug for hjælp?"
         tag_bug: "fejl"
-        tag_feature: "funktion"
+        tag_feature: "feature"
         tag_question: "spørgsmål"
         tutorial_link_text: "Guider"
         tutorials_and_wiki: "%{faq}, %{tutorial} og %{wiki}: Hjælp til at komme i gang."
       introduce_yourself: "Dette er din strøm. Hop ud i den og introducér dig selv."
       keep_diaspora_running: "Hjælp udviklingen af Diaspora* med en månedlig donation!"
-      keep_pod_running: "Hjælp med at få %{pod} til at køre, og sørg for at administratoren kan få sig en håndbajer i ny og næ med en månedlig donation."
+      keep_pod_running: "Hjælp med at få %{pod} til at køre, og sørg for at administratoren kan få sig en kop kaffe i ny og næ med en månedlig donation."
       new_here:
         follow: "Følg %{link} og byd nye brugere velkommen til Diaspora*!"
         learn_more: "Lær mere"
@@ -264,6 +282,7 @@ da:
     few: "%{count} kontaktpersoner"
     index:
       add_a_new_aspect: "Tilføj nyt aspekt"
+      add_contact: "Tilføj kontakt"
       add_to_aspect: "Tilføj kontaktpersoner til %{name}"
       add_to_aspect_link: "tilføj kontakter til %{name}"
       all_contacts: "Alle kontakter"
@@ -274,9 +293,10 @@ da:
       no_contacts_message: "Se %{community_spotlight}"
       no_contacts_message_with_aspect: "Se %{community_spotlight} eller %{add_to_aspect_link}"
       only_sharing_with_me: "Deler kun med mig"
-      remove_person_from_aspect: "Fjern %{person_name} fra \"%{aspect_name}\""
+      remove_contact: "Fjern kontakt"
       start_a_conversation: "Start en samtale"
       title: "Kontakter"
+      user_search: "Søg efter brugere"
       your_contacts: "Dine kontakter"
     many: "%{count} kontakter"
     one: "Én kontaktperson"
@@ -391,6 +411,14 @@ da:
     getting_started_tutorial: "'At komme i gang' en serie af guider"
     here: "her"
     irc: "IRC"
+    keyboard_shortcuts:
+      keyboard_shortcuts_a1: "På siden med din Strøm kan du bruge følgende tastaturgenveje:"
+      keyboard_shortcuts_li1: "j - gå til næste indlæg"
+      keyboard_shortcuts_li2: "k - gå til forrige indlæg"
+      keyboard_shortcuts_li3: "c - kommenter det nuværende indlæg"
+      keyboard_shortcuts_li4: "l - marker at du synes om det nuværende indlæg"
+      keyboard_shortcuts_q: "Hvilke tastaturgenveje er til rådighed?"
+      title: "Tastaturgenveje"
     markdown: "Markdown"
     mentions:
       how_to_mention_a: "Skriv \"@\" efterfulgt af deres navn. En rullemenu skulle herefter nemt lade dig vælge dem. Bemærk at det kun er muligt at nævne folk som du har tilføjet til et af dine aspekter."
@@ -405,7 +433,7 @@ da:
     miscellaneous:
       back_to_top_a: "Ja. Når du har rullet en hel side ned kan du klikke på den grå pil der vises i nederste højre hjørne af browservinduet."
       back_to_top_q: "Er der en hurtig måde at gå tilbage til toppen af siden når jeg har rullet ned?"
-      diaspora_app_a: "Der er flere Android-apps under udvikling. Flere er forladte projekter og fungerer derfor ikke godt sammen med den aktuelle version af diaspora *. Forvent ikke meget af disse apps. I øjeblikket er den bedste måde at få adgang til diaspora * fra din mobile enhed, gennem en browser, fordi vi har udviklet en mobil version af hjemmesiden, som bør virke godt på alle enheder. Der er i øjeblikket ingen app til iOS. Igen bør diaspora * fungere fint via din browser."
+      diaspora_app_a: "Der er flere Android-apps under udvikling. Flere er forladte projekter og fungerer derfor ikke godt sammen med den aktuelle version af Diaspora*. Forvent ikke meget af disse apps. I øjeblikket er den bedste måde at få adgang til Diaspora* fra din mobile enhed gennem en browser, fordi vi har udviklet en mobil version af hjemmesiden som bør virke godt på alle enheder. Der er i øjeblikket ingen app til iOS. Igen bør Diaspora* fungere fint via din browser."
       diaspora_app_q: "Findes der en Diaspora*-app til Android eller IOS?"
       photo_albums_a: "Nej, ikke i øjeblikket. Men du kan se en strøm af deres uploadede billeder fra fotosektionen i sidekolonnen af deres profilside."
       photo_albums_q: "Er der billed, eller videoalbums?"
@@ -421,7 +449,7 @@ da:
       what_is_a_pod_a: "En pod er en server, der kører Diaspora*-softwaren og er forbundet til diaspora*-netværket. \"Pod\" er engelsk for en plantebælg, og er således en metafor: En bælg indeholder frø på samme måde som en server indeholder brugerkonti. Der er mange forskellige pods. Du kan tilføje venner fra andre pods og kommunikere med dem. (Du kan tænke på en diaspora* pod som du tænker på en e-mailudbyder: Der er offentlige pods, private pods og med en vis indsats kan du endda køre din egen)."
       what_is_a_pod_q: "Hvad er en pod?"
     posts_and_posting:
-      char_limit_services_a: "I dette tilfælde vil dit indlæg være begrænset til et mindre antal tegn (140 i tilfælde af Twitter, 1000 i tilfælde af Tumblr), og antallet af tegn, du har tilbage vises, når denne tjenestes ikon er fremhævet. Du kan stadig skrive til disse tjenester, hvis dit indlæg er længere end deres grænse, men teksten vil i så fald blive afkortet på disse tjenester."
+      char_limit_services_a: "I dette tilfælde vil dit indlæg være begrænset til et mindre antal tegn (140 tegn hvis det drejer sg om Twitter, 1000 tegn for Tumblr), og antallet af tegn, du har tilbage vises, når denne tjenestes ikon er fremhævet. Du kan stadig skrive til disse tjenester, hvis dit indlæg er længere end deres grænse, men teksten vil i så fald blive afkortet på disse tjenester."
       char_limit_services_q: "Hvad er tegngrænsen for indlæg der deles via en tilsluttet tjeneste, der kræver et mindre antal tegn?"
       character_limit_a: "65.535 tegn. Det er 65.395 flere tegn end du får på Twitter! ;)"
       character_limit_q: "Hvad er grænsen for hvor mange tegn der må være i et indlæg?"
@@ -523,6 +551,7 @@ da:
       what_are_tags_for_a: "Tags er en måde at kategorisere indlæg på, normalt efter emne. Hvis du søger efter et tag vil du se alle de indlæg der indeholder tagget og som du har tilladelse til at se (både offentlige og private indlæg). Dette lader folk der er interesserede i et bestemt emne finde offentlige indlæg der handler om netop det."
       what_are_tags_for_q: "Hvad bruger man tags til?"
     third_party_tools: "tredjeparts værktøjer"
+    title_header: "Hjælp"
     tutorial: "guide"
     tutorials: "guider"
     wiki: "wiki"
@@ -644,6 +673,7 @@ da:
       comment_on_post: "Kommenter indlæg"
       liked: "syntes om"
       mark_all_as_read: "Marker alle som læst"
+      mark_all_shown_as_read: "Marker alle viste som læst"
       mark_read: "Marker som læst"
       mark_unread: "Marker som ulæst"
       mentioned: "omtalte"
@@ -944,6 +974,8 @@ da:
       sign_up: "TILMELD DIG"
       sign_up_message: "Socialt netværk med et <3"
       submitting: "Sender ..."
+      terms: "Ved at oprette en konto accepterer du %{terms_link}."
+      terms_link: "Servicevilkår"
       username: "BRUGERNAVN"
   report:
     comment_label: "<b>Kommentar</b>:<br>%{data}"
@@ -1140,10 +1172,7 @@ da:
       no_message_to_display: "Ingen beskeder at vise."
     new:
       mentioning: "Nævnt: %{person}"
-    too_long:
-      one: "Lav venligst en statusopdatering på under %{count} tegn"
-      other: "Lav venligst en statusopdatering på under %{count} tegn"
-      zero: "Lav venligst en statusopdatering på under %{count} tegn"
+    too_long: "Lav venligst en statusopdatering på under %{count} tegn. Lige nu er der %{current_length} tegn."
   stream_helper:
     hide_comments: "Skjul alle kommentarer"
     show_comments:

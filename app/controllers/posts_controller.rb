@@ -5,9 +5,9 @@
 class PostsController < ApplicationController
   include PostsHelper
 
-  before_filter :authenticate_user!, :except => [:show, :iframe, :oembed, :interactions]
-  before_filter :set_format_if_malformed_from_status_net, :only => :show
-  before_filter :find_post, :only => [:show, :interactions]
+  before_action :authenticate_user!, :except => [:show, :iframe, :oembed, :interactions]
+  before_action :set_format_if_malformed_from_status_net, :only => :show
+  before_action :find_post, :only => [:show, :interactions]
 
   use_bootstrap_for :show
 
@@ -85,9 +85,13 @@ class PostsController < ApplicationController
   end
 
   def mark_corresponding_notifications_read
-    Notification.where(recipient_id: current_user.id, target_id: @post.id, unread: true).each do |n|
-      n.unread = false
-      n.save!
+    # For comments, reshares, likes
+    Notification.where(recipient_id: current_user.id, target_type: "Post", target_id: @post.id, unread: true).each do |n|
+      n.set_read_state( true )
     end
+
+    # For mentions
+    mention = @post.mentions.where(person_id: current_user.person_id).first
+    Notification.where(recipient_id: current_user.id, target_type: "Mention", target_id: mention.id, unread: true).first.try(:set_read_state, true) if mention
   end
 end

@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
+
 /*   Copyright (c) 2010-2011, Diaspora Inc.  This file is
  *   licensed under the Affero General Public License version 3 or later.  See
  *   the COPYRIGHT file.
@@ -31,12 +33,12 @@ $(document).ready(function(){
     evt.preventDefault();
     $("#app").toggleClass('draw');
   });
-  
+
   /* Show / hide aspects in the drawer */
   $('#all_aspects').bind("tap click", function(evt){
     evt.preventDefault();
     $("#all_aspects + li").toggleClass('hide');
-  });  
+  });
 
   /* Heart toggle */
   $(".like_action", ".stream").bind("tap click", function(evt){
@@ -319,7 +321,7 @@ function createUploader(){
         $('#publisher_textarea_wrapper').addClass("with_attachments");
         $('#photodropzone').append(
           "<li class='publisher_photo loading' style='position:relative;'>" +
-            "<img alt='Ajax-loader2' src='/assets/ajax-loader2.gif' />" +
+            "<img alt='Ajax-loader2' src='"+ImagePaths.get('ajax-loader2.gif')+"' />" +
           "</li>"
           );
        },
@@ -371,3 +373,5 @@ function createUploader(){
    });
 }
 createUploader();
+// @license-end
+

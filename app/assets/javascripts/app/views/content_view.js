@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
+
 app.views.Content = app.views.Base.extend({
   events: {
     "click .expander": "expandPost"
@@ -22,7 +24,8 @@ app.views.Content = app.views.Base.extend({
   smallPhotos : function() {
     var photos = this.model.get("photos")
     if(!photos || photos.length < 2) { return }
-    return photos
+    photos.splice(0, 1); // remove first photo as it is already shown as largePhoto
+    return photos;
   },
 
 
@@ -113,5 +116,25 @@ app.views.OEmbed = app.views.Base.extend({
 });
 
 app.views.OpenGraph = app.views.Base.extend({
-  templateName : "opengraph"
+  templateName : "opengraph",
+
+  initialize: function() {
+    this.truncateDescription();
+  },
+
+  truncateDescription: function() {
+    // truncate opengraph description to 250 for stream view
+    if(this.model.has('open_graph_cache')) {
+      var ogdesc = this.model.get('open_graph_cache');
+      ogdesc.description = app.helpers.truncate(ogdesc.description, 250);
+    }
+  }
 });
+
+app.views.SPVOpenGraph = app.views.OpenGraph.extend({
+  truncateDescription: function () {
+    // override with nothing
+  }
+});
+// @license-end
+

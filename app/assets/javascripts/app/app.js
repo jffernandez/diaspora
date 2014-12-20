@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
+
 //= require_self
 //= require_tree ./helpers
 
@@ -12,6 +14,8 @@
 //= require_tree ./collections
 //= require_tree ./views
 
+//= require perfect-scrollbar
+
 var app = {
   collections: {},
   models: {},
@@ -20,14 +24,19 @@ var app = {
   pages: {},
   forms: {},
 
+  // global event broker - use event names in the form of "object:action:data"
+  //   [object]: the class of the acting object
+  //   [action]: infinitive verb naming the performed action
+  //   [data]:   (optional) unique name or ID of the specific instance
+  // e.g. "person:ignore:123"
+  // if your event has to pass more than one datum (singular) - or in case you
+  // need structured data - specify them as arguments to the `#trigger` call
+  // e.g. `app.events.trigger('example:event', {more: 'data'})`
+  events: _.extend({}, Backbone.Events),
+
   user: function(userAttrs) {
     if(userAttrs) { return this._user = new app.models.User(userAttrs) }
     return this._user || false
-  },
-
-  baseImageUrl: function(baseUrl){
-    if(baseUrl) { return this._baseImageUrl = baseUrl }
-    return this._baseImageUrl || "assets/"
   },
 
   initialize: function() {
@@ -79,8 +88,8 @@ var app = {
   },
 
   setupFacebox: function() {
-    $.facebox.settings.closeImage = app.baseImageUrl()+'facebox/closelabel.png';
-    $.facebox.settings.loadingImage = app.baseImageUrl()+'facebox/loading.gif';
+    $.facebox.settings.closeImage = ImagePaths.get('facebox/closelabel.png');
+    $.facebox.settings.loadingImage = ImagePaths.get('facebox/loading.gif');
     $.facebox.settings.opacity = 0.75;
   },
 
@@ -100,6 +109,9 @@ var app = {
   setupGlobalViews: function() {
     app.hovercard = new app.views.Hovercard();
     app.aspectMembershipsBlueprint = new app.views.AspectMembershipBlueprint();
+    $('.aspect_membership_dropdown').each(function(){
+      new app.views.AspectMembership({el: this});
+    });
     app.sidebar = new app.views.Sidebar();
   },
 
@@ -119,3 +131,5 @@ var app = {
 $(function() {
   app.initialize();
 });
+// @license-end
+

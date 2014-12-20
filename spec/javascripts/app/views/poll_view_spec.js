@@ -23,16 +23,25 @@ describe("app.views.Poll", function(){
 
   describe("vote", function(){
     it("checks the ajax call for voting", function(){
-      spyOn($, "ajax");
+      jasmine.Ajax.install();
       var answer = this.view.poll.poll_answers[0];
       var poll = this.view.poll;
 
       this.view.vote(answer.id);
 
-      var obj = JSON.parse($.ajax.mostRecentCall.args[0].data);
+      var obj = JSON.parse(jasmine.Ajax.requests.mostRecent().params);
       expect(obj.poll_id).toBe(poll.poll_id);
       expect(obj.poll_answer_id).toBe(answer.id);
     })
+  });
+
+  describe("render", function() {
+    it("escapes the poll question", function() {
+      var question = "<script>alert(0);</script>";
+      this.view.poll.question = question;
+      this.view.render();
+      expect(this.view.$('.poll_head strong').text()).toBe(question);
+    });
   });
 
   describe("vote form", function(){

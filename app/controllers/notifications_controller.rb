@@ -3,7 +3,7 @@
 #   the COPYRIGHT file.
 
 class NotificationsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   layout ->(c) { request.format == :mobile ? "application" : "with_header_with_footer" }
   use_bootstrap_for :index
@@ -33,13 +33,11 @@ class NotificationsController < ApplicationController
     page = params[:page] || 1
     per_page = params[:per_page] || 25
     @notifications = WillPaginate::Collection.create(page, per_page, Notification.where(conditions).count ) do |pager|
-      result = Notification.find(:all,
-                                 :conditions => conditions,
-                                 :order => 'created_at desc',
-                                 :include => [:target, {:actors => :profile}],
-                                 :limit => pager.per_page,
-                                 :offset => pager.offset
-                                )
+      result = Notification.where(conditions)
+                           .includes(:target, :actors => :profile)
+                           .order('created_at desc')
+                           .limit(pager.per_page)
+                           .offset(pager.offset)
 
       pager.replace(result)
     end
@@ -65,13 +63,22 @@ class NotificationsController < ApplicationController
   end
 
   def read_all
-    Notification.where(:recipient_id => current_user.id).update_all(:unread => false)
+    current_type = Notification.types[params[:type]]
+    notifications = Notification.where(:recipient_id => current_user.id)
+    notifications = notifications.where(:type => current_type) if params[:type]
+    notifications.update_all(:unread => false)
     respond_to do |format|
-      format.html { redirect_to stream_path }
-      format.mobile{ redirect_to stream_path}
+      if current_user.unread_notifications.count > 0
+        format.html { redirect_to notifications_path }
+        format.mobile { redirect_to notifications_path }
+      else
+        format.html { redirect_to stream_path }
+        format.mobile { redirect_to stream_path }
+      end
       format.xml { render :xml => {}.to_xml }
       format.json { render :json => {}.to_json }
     end
+
   end
 
 end

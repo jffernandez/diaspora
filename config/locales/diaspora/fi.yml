@@ -12,6 +12,7 @@ fi:
   _home: "Etusivu"
   _photos: "kuvat"
   _services: "Ulkoiset palvelut"
+  _terms: "Ehdot"
   account: "Käyttäjätili"
   activerecord:
     errors:
@@ -87,14 +88,31 @@ fi:
         other: "%{count} käyttäjää"
         zero: "ei yhtään käyttäjää"
       week: "Viikko"
+    user_entry:
+      account_closed: "käyttäjätili suljettu"
+      diaspora_handle: "Diaspora kahva"
+      email: "Sähköposti"
+      guid: "GUID"
+      id: "Tunnus"
+      last_seen: "nähty viimeksi"
+      ? "no"
+      : ei
+      nsfw: "#nsfw"
+      unknown: "tuntematon"
+      ? "yes"
+      : kyllä
     user_search:
+      account_closing_scheduled: "Käyttäjätili %{name} on ajastettu suljettavaksi. Suoritus tapahtuu muutaman hetken kuluttua..."
       add_invites: "lisää kutsuja"
+      are_you_sure: "Haluatko varmasti sulkea tämä käyttäjätilin?"
+      close_account: "sulje käyttäjätili"
       email_to: "Lähetä sähköposti kutsuaksesi"
       under_13: "Näytä käyttäjät jotka ovat alle 13 (COPPA)"
       users:
         one: "%{count} käyttäjä löytyi"
         other: "%{count} käyttäjää löytyi"
         zero: "Yhtään käyttäjää ei löytynyt"
+      view_profile: "näytä profiili"
       you_currently:
         one: "sinulla on tällä hetkellä %{count} kutsu jäljellä %{link}"
         other: "sinulla on tällä hetkellä %{count} kutsua jäljellä %{link}"
@@ -264,6 +282,7 @@ fi:
     few: "%{count} henkilöä"
     index:
       add_a_new_aspect: "Lisää näkymä"
+      add_contact: "Lisää henkilö"
       add_to_aspect: "lisää henkilöitä näkymään %{name}"
       add_to_aspect_link: "lisää henkilöitä näkymään %{name}"
       all_contacts: "Kaikki henkilöt"
@@ -274,9 +293,10 @@ fi:
       no_contacts_message: "Käy katsomassa %{community_spotlight}"
       no_contacts_message_with_aspect: "Käy katsomassa %{community_spotlight} tai %{add_to_aspect_link}"
       only_sharing_with_me: "Jakaa vain kanssani"
-      remove_person_from_aspect: "Poista %{person_name} näkymästä: \"%{aspect_name}\""
+      remove_contact: "Poista kontakti"
       start_a_conversation: "Aloita keskustelu"
       title: "Henkilöt"
+      user_search: "Käyttäjähaku"
       your_contacts: "Kontaktisi"
     many: "%{count} henkilöä"
     one: "1 henkilö"
@@ -391,6 +411,14 @@ fi:
     getting_started_tutorial: "'Näin pääset alkuun' kurssit"
     here: "tässä"
     irc: "IRC"
+    keyboard_shortcuts:
+      keyboard_shortcuts_a1: "Virtanäkymässä voit käyttää seuraavia näppäinoikoteitä?"
+      keyboard_shortcuts_li1: "j - siirry seuraavaan julkaisuun"
+      keyboard_shortcuts_li2: "k - siirry edelliseen julkaisuun"
+      keyboard_shortcuts_li3: "c - kommentoi nykyistä julkaisua"
+      keyboard_shortcuts_li4: "I - tykkää nykyistä julkaisua"
+      keyboard_shortcuts_q: "MItä näppäinoikoteitä on käytettävissä?"
+      title: "Näppäinoikotiet"
     markdown: "Markdown"
     mentions:
       how_to_mention_a: "Kirjoita \"@\" merkki ja ryhdy kirjoittamaan hänen nimeään. Alasvetovalikon pitäisi ilmestyä, josta voit valita hänet helpommin. Huomioi, että voit mainita ainoastaan henkilöitä, joita olet lisännyt johonkin näkymään."
@@ -523,6 +551,7 @@ fi:
       what_are_tags_for_a: "Tagit on tapa luokitella julkaisuja, yleensä aiheen mukaan. Tagin etsiminen näyttää kaikki kyseisellä tagilla merkityt julkaisut, jotka ovat sinun nähtävissäsi (sekä julkiset, että yksityiset). Tällä tavalla kyseisestä aiheesta kiinnostuneet ihmiset voivat löytää aiheeseen liittyvät julkiset julkaisut."
       what_are_tags_for_q: "Mihin tageja tarvitaan?"
     third_party_tools: "kolmannen osapuolen työkalut"
+    title_header: "Apua"
     tutorial: "Opastus"
     tutorials: "ohjeita"
     wiki: "wiki"
@@ -605,9 +634,9 @@ fi:
   no_results: "Tuloksia ei löytynyt"
   notifications:
     also_commented:
-      one: "Myös %{actors} kommentoi käyttäjän %{post_author} %{post_link}a."
-      other: "Myös %{actors} kommentoivat käyttäjän %{post_author} %{post_link}a."
-      zero: "Myös %{actors} kommentoi käyttäjän %{post_author} %{post_link}a."
+      one: "Myös %{actors} kommentoi käyttäjän %{post_author} julkaisua %{post_link}."
+      other: "Myös %{actors} kommentoivat käyttäjän %{post_author} julkaisua %{post_link}."
+      zero: "Myös %{actors} kommentoi käyttäjän %{post_author} julkaisua %{post_link}."
     also_commented_deleted:
       one: "%{actors} kommentoi poistettua julkaisuasi."
       other: "%{actors} on kommentoinut poistettua julkaisuasi."
@@ -638,6 +667,7 @@ fi:
       comment_on_post: "Kommentoi julkaisua"
       liked: "Tykätyt"
       mark_all_as_read: "Merkitse kaikki luetuiksi"
+      mark_all_shown_as_read: "Merkitse kaikki näytettäviksi luettuina"
       mark_read: "Merkitse luetuksi"
       mark_unread: "Merkitse lukemattomaksi"
       mentioned: "Mainittu"
@@ -657,10 +687,10 @@ fi:
     mentioned:
       few: "%{actors} ovat maininneet sinut %{post_link}ssä."
       many: "%{actors} ovat maininneet sinut %{post_link}ssä."
-      one: "%{actors} on maininnut sinut %{post_link}ssä."
-      other: "%{actors} ovat maininneet sinut %{post_link}ssä."
+      one: "%{actors} on maininnut sinut julkaisussa %{post_link}."
+      other: "%{actors} ovat maininneet sinut julkaisussa %{post_link}."
       two: "%{actors} ovat maininneet sinut %{post_link}ssä."
-      zero: "%{actors} on maininnut sinut %{post_link}ssä."
+      zero: "%{actors} on maininnut sinut julkaisussa %{post_link}."
     mentioned_deleted:
       one: "%{actors} mainitsi sinut poistetussa julkaisussa."
       other: "%{actors} mainitsivat sinut poistetussa julkaisussa."
@@ -722,8 +752,25 @@ fi:
     private_message:
       reply_to_or_view: "Lue tai osallistu keskusteluun >"
     report_email:
+      body: |-
+          Hei,
+
+          %{type} ID:llä %{id} merkittiin loukkaavaksi.
+
+          [%{url}][1]
+
+          Ole hyvä ja tarkista niin pian, kuin mahdollista!
+
+
+          Kiittäen,
+
+          diaspora* sähköpostirobotti!
+
+          [1]: %{url}
+      subject: "Uusi %{type} merkittiin loukkaavaksi"
       type:
         comment: "kommentti"
+        post: "julkaisu"
     reshared:
       reshared: "%{name} jakoi julkaisusi uudelleen"
       view_post: "Näytä julkaisu >"
@@ -909,10 +956,15 @@ fi:
       sign_up: "REKISTERÖIDY"
       sign_up_message: "Yhteisöpalvelu suurella ♥:llä"
       submitting: "Lähettää..."
+      terms: "Luomalla tilin hyväksyt %{terms_link}"
+      terms_link: "palvelun käyttöehdot"
       username: "KÄYTTÄJÄNIMI"
   report:
+    comment_label: "<b>Kommentti</b>:<br>%{data}"
     confirm_deletion: "Oletko varma, että haluat poistaa kohteen?"
     delete_link: "Poista kohde"
+    not_found: "<u>Julkaisua tai kommenttia ei löytynyt. Vaikuttaa siltä, että käyttäjä on poistanut sen!</u>"
+    post_label: "<b>Julkaisu</b>: %{title}"
     reason_label: "Syy: %{text}"
     reported_label: "<b>Ilmoituksen teki</b> %{person}"
     review_link: "Merkitse tarkistetuksi"
@@ -1047,10 +1099,10 @@ fi:
         newhere: "UusiTäällä"
       poll:
         add_a_poll: "Lisää kysely"
-        add_poll_answer: "Lisää vastaus"
+        add_poll_answer: "Lisää vastausvaihtoehto"
         option: "Vaihtoehto 1"
         question: "Kysymys"
-        remove_poll_answer: "Poista vastaus"
+        remove_poll_answer: "Poista vastausvaihtoehto"
       post_a_message_to: "Lähetä julkaisu näkymään %{aspect}"
       posting: "Lähetetään..."
       preview: "Esikatselu"
@@ -1075,7 +1127,7 @@ fi:
       show: "näytä"
       unlike: "Peru tykkäys"
       via: "%{link} kautta"
-      via_mobile: "puhelimen välityksellä"
+      via_mobile: "mobiililaitteen kautta"
       viewable_to_anyone: "Kuka tahansa verkossa näkee tämän julkaisun"
   simple_captcha:
     label: "Kirjoita kentässä oleva koodi:"
@@ -1093,10 +1145,7 @@ fi:
       no_message_to_display: "Ei näytettäviä viestejä."
     new:
       mentioning: "Mainitse: %{person}"
-    too_long:
-      one: "tilapäivityksen merkkimäärä voi olla enimmillään %{count}"
-      other: "tilapäivityksen merkkimäärä voi olla enimmillään %{count}"
-      zero: "tilapäivityksen merkkimäärä voi olla enimmillään %{count}"
+    too_long: "{\"one\"=>\"tilapäivityksen merkkimäärä voi olla enimmillään %{count}\", \"other\"=>\"tilapäivityksen merkkimäärä voi olla enimmillään %{count}\", \"zero\"=>\"tilapäivityksen merkkimäärä voi olla enimmillään %{count}\"}"
   stream_helper:
     hide_comments: "Piilota kaikki kommentit"
     show_comments:

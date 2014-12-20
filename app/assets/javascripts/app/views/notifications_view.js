@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
+
 app.views.Notifications = Backbone.View.extend({
 
   events: {
@@ -6,9 +8,7 @@ app.views.Notifications = Backbone.View.extend({
 
   initialize: function() {
     Diaspora.page.header.notifications.setUpNotificationPage(this);
-    $('.aspect_membership_dropdown').each(function(){
-      new app.views.AspectMembership({el: this});
-    });
+    $(".unread-toggle .entypo").tooltip();
   },
 
   toggleUnread: function(evt) {
@@ -57,11 +57,19 @@ app.views.Notifications = Backbone.View.extend({
     note = $('.stream_element[data-guid=' + guid + ']');
     if(unread) {
       note.removeClass("read").addClass("unread");
-      $(".unread-toggle", note).text(Diaspora.I18n.t('notifications.mark_read'));
+      $(".unread-toggle .entypo", note)
+        .tooltip('destroy')
+        .removeAttr("data-original-title")
+        .attr('title',Diaspora.I18n.t('notifications.mark_read'))
+        .tooltip();
     }
     else {
       note.removeClass("unread").addClass("read");
-      $(".unread-toggle", note).text(Diaspora.I18n.t('notifications.mark_unread'));
+      $(".unread-toggle .entypo", note)
+        .tooltip('destroy')
+        .removeAttr("data-original-title")
+        .attr('title',Diaspora.I18n.t('notifications.mark_unread'))
+        .tooltip();
     }
 
     all_notes.text( function(i,text) { return parseInt(text) + change });
@@ -84,3 +92,5 @@ app.views.Notifications = Backbone.View.extend({
     }
   }
 });
+// @license-end
+

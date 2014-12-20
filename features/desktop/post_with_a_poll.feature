@@ -9,28 +9,30 @@ Feature: posting with a poll
       And I am on the home page
       
     Scenario: expanding the publisher
-      Given "#publisher-poll-creator" is hidden
+      Given "#poll_creator_container" is hidden
       When I expand the publisher
       Then I should see an element "#poll_creator"
 
     Scenario: expanding the poll creator
-      Given "#publisher-poll-creator" is hidden
+      Given "#poll_creator_container" is hidden
       When I expand the publisher
       And I press the element "#poll_creator"
-      Then I should see an element "#publisher-poll-creator"
+      Then I should see an element "#poll_creator_container"
 
     Scenario: adding option to poll
-      Given "#publisher-poll-creator" is hidden
+      Given "#poll_creator_container" is hidden
       When I expand the publisher
       And I press the element "#poll_creator"
-      And I press the element ".add-answer .button.creation"
+      And I fill in values for the first two options
+      And I lose focus 
       Then I should see 3 options
 
     Scenario: delete an option
-      Given "#publisher-poll-creator" is hidden
+      Given "#poll_creator_container" is hidden
       When I expand the publisher
       And I press the element "#poll_creator"
-      And I press the element ".add-answer .button.creation"
+      And I fill in values for the first two options
+      And I lose focus 
       And I delete the last option
       Then I should see 2 option
       And I should not see a remove icon
@@ -87,6 +89,6 @@ Feature: posting with a poll
     And I fill in the following for the options:
         | normal |
         |  |
-    And I press the element "#publisher-poll-creator"
+    And I press the element "#poll_creator_container"
     And I press the element "input[type=submit]"
-    Then I should see an element ".poll-answer.error"
+    Then I should see an element ".poll-answer input.error"

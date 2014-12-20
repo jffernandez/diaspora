@@ -19,19 +19,12 @@ module LayoutHelper
     pod_name
   end
 
-  def set_asset_host
-    path = AppConfig.environment.assets.host.to_s + '/assets/'
-    content_tag(:script) do
-      <<-JS.html_safe
-        if(window.app) app.baseImageUrl("#{path}")
-      JS
-    end
-  end
-
   def load_javascript_locales(section = 'javascripts')
     content_tag(:script) do
       <<-JS.html_safe
-        Diaspora.I18n.loadLocale(#{get_javascript_strings_for(I18n.locale, section).to_json}, "#{I18n.locale}");
+        Diaspora.I18n.load(#{get_javascript_strings_for(I18n.locale, section).to_json},
+                           "#{I18n.locale}",
+                           #{get_javascript_strings_for(DEFAULT_LANGUAGE, section).to_json});
         Diaspora.Page = "#{params[:controller].camelcase}#{params[:action].camelcase}";
       JS
     end

@@ -273,7 +273,6 @@ he:
       no_contacts_message: "כדאי לבדוק %{community_spotlight}"
       no_contacts_message_with_aspect: "כדאי לבדוק %{community_spotlight} או %{add_to_aspect_link}"
       only_sharing_with_me: "רק אלו המשתפים אתי"
-      remove_person_from_aspect: "הסרת %{person_name} מההיבט \"%{aspect_name}\""
       start_a_conversation: "התחלת שיחה"
       title: "אנשי קשר"
       your_contacts: "אנשי הקשר שלך"
@@ -361,8 +360,8 @@ he:
       get_support_q: "מה אם אינני מקבל כאן תשובה בשאלות הנפוצות? איפה עוד אוכל לקבל תמיכה?"
       getting_started_a: "התמזל מזלך. נסה את ה‎%{tutorial_series}‎ באתר הפרוייקט. היא תלווה אותך במהלך תהליך הרישום ותלמד אותך את כל הדברים הבסיסיים שאתה צריך לדעת בשביל להשתמש בדיאספורה."
       getting_started_q: "הצילו! אני חייב קצת עזרה בסיסית בשביל להתחיל."
-      title: "עזרה"
-    getting_started_tutorial: "סדרת מדריכים למתחיל"
+      title: "קבלת עזרה"
+    getting_started_tutorial: "סדרת מדריכים למתחילים"
     here: "כאן"
     irc: "IRC"
     third_party_tools: "כלים צד שלישי"
@@ -912,10 +911,7 @@ he:
       no_message_to_display: "אין הודעה להצגה."
     new:
       mentioning: "אזכור: %{person}"
-    too_long:
-      one: "נא לקצר את הודעות הסטטוס שלך לפחות מתו אחד"
-      other: "נא לקצר את הודעות הסטטוס שלך לפחות מ-%{count} תווים"
-      zero: "נא לקצר את הודעות הסטטוס שלך לפחות מ-%{count} תווים"
+    too_long: "{\"one\"=>\"נא לקצר את הודעות הסטטוס שלך לפחות מתו אחד\", \"other\"=>\"נא לקצר את הודעות הסטטוס שלך לפחות מ-%{count} תווים\", \"zero\"=>\"נא לקצר את הודעות הסטטוס שלך לפחות מ-%{count} תווים\"}"
   stream_helper:
     hide_comments: "הסתרת כל התגובות"
     show_comments:
@@ -1028,7 +1024,7 @@ he:
       show_community_spotlight: "להציג פרסומים חשובים בקהילה בחדשות שלך?"
       show_getting_started: "הפעלת המדריך למשתמשים חדשים"
       started_sharing: "...מישהו התחיל לשתף איתך?"
-      stream_preferences: "העדפות החדשות"
+      stream_preferences: "העדפות של תצוגת החדשות"
       your_email: "כתובת הדוא״ל שלך"
       your_handle: "מזהה הדיאספורה* שלך"
     getting_started:

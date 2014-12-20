@@ -1,3 +1,5 @@
+// @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3-or-Later
+
 app.views.Help = app.views.StaticContentView.extend({
   templateName : "help",
 
@@ -5,7 +7,8 @@ app.views.Help = app.views.StaticContentView.extend({
     "click .faq-link" : "sectionClicked",
     "click .faq-link-getting-help" : "gettingHelp",
     "click .faq-link-sharing" : "sharing",
-    "click .faq-link-posts-and-posting" : "postsAndPosting"
+    "click .faq-link-posts-and-posting" : "postsAndPosting",
+    "click .faq-link-keyboard-shortcuts" : "keyboardShortcuts",
   },
 
   initialize : function(options) {
@@ -26,6 +29,7 @@ app.views.Help = app.views.StaticContentView.extend({
     };
 
     this.data = {
+      title_header: Diaspora.I18n.t( 'title_header' ),
       title_getting_help: Diaspora.I18n.t( 'getting_help.title' ),
       title_account_and_data_management: Diaspora.I18n.t( 'account_and_data_management.title' ),
       title_aspects: Diaspora.I18n.t( 'aspects.title' ),
@@ -39,6 +43,7 @@ app.views.Help = app.views.StaticContentView.extend({
       title_resharing_posts: Diaspora.I18n.t( 'resharing_posts.title' ),
       title_sharing: Diaspora.I18n.t( 'sharing.title' ),
       title_tags: Diaspora.I18n.t( 'tags.title' ),
+      title_keyboard_shortcuts: Diaspora.I18n.t( 'keyboard_shortcuts.title' ),
       title_miscellaneous: Diaspora.I18n.t( 'miscellaneous.title' ),
     }
 
@@ -112,7 +117,7 @@ app.views.Help = app.views.StaticContentView.extend({
 
   renderStaticSection: function(section, template, subs) {
     this.clearItems();
-    data = $.extend(Diaspora.I18n.locale[section], { className: section });
+    data = $.extend(Diaspora.I18n.resolve(section), { className: section });
     help_section = new app.views.HelpSectionView({
       template: template,
       data: data,
@@ -142,7 +147,16 @@ app.views.Help = app.views.StaticContentView.extend({
     e.preventDefault();
   },
 
+  keyboardShortcuts: function(e) {
+    this.renderStaticSection("keyboard_shortcuts", "faq_keyboard_shortcuts", {});
+    this.menuClicked(e);
+
+    e.preventDefault();
+  },
+
   linkHtml: function(url, text) {
     return "<a href=\"" + url + "\" target=\"_blank\">" + text + "</a>";
   },
 });
+// @license-end
+
